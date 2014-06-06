@@ -1,0 +1,15 @@
+# ignore dotenv
+*/.env
+
+# ignore vagrant assets
+*/.vagrant
+
+# ignore packer assets
+*/output-virtualbox-iso
+*/vendor
+
+# ignore generated Vagrantfile's
+*/Vagrantfile
+
+# ignore generated boxes
+*/*.box
