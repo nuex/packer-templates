@@ -19,3 +19,16 @@ desc 'Generate a Vagrantfile'
 task :gen_vagrantfile, :box do |t, args|
   sh("sed -e 's/{{box}}/#{args.box}/g' Vagrantfile.template > Vagrantfile")
 end
+
+desc 'Upload a box'
+task :upload, :box, :name do |t, args|
+  bucket = ENV['BOX_BUCKET']
+  config = File.join(File.dirname(__FILE__), '.s3cfg')
+  config = ENV['S3CFG'] unless File.exist?(config)
+  cmd = 's3cmd'
+  # Set custom config or current directory config if it was given
+  cmd << " -c #{config}" unless config.empty?
+  name = args.name || args.box
+  cmd << " --acl-public put #{args.box}.box s3://#{bucket}/#{name}.box"
+  sh cmd
+end
