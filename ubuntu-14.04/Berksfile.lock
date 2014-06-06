@@ -1,0 +1,16 @@
+DEPENDENCIES
+  packer
+    path: ../cookbooks/packer
+
+GRAPH
+  annoyances (1.0.0)
+  apt (2.4.0)
+  build-essential (2.0.2)
+  hostname (0.3.0)
+    hostsfile (>= 0.0.0)
+  hostsfile (2.4.4)
+  packer (0.0.0)
+    annoyances (>= 0.0.0)
+    apt (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    hostname (>= 0.0.0)
