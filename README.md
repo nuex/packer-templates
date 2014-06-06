@@ -5,7 +5,7 @@ nuex's packer templates
 
 Currently:
 
-  * ubuntu-14.04-amd64-base - simple base template
+  * `ubuntu-14.04-amd64-base` - simple base template
 
 ## Building the box
 
