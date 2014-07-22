@@ -1,0 +1,33 @@
+DEPENDENCIES
+  packer
+    path: ../packer
+  packer-erlang
+    path: .
+    metadata: true
+
+GRAPH
+  annoyances (1.0.0)
+  apt (2.4.0)
+  build-essential (2.0.4)
+  erlang (1.5.4)
+    apt (>= 1.7.0)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+    yum-erlang_solutions (>= 0.0.0)
+  hostname (0.3.0)
+    hostsfile (>= 0.0.0)
+  hostsfile (2.4.5)
+  packer (0.0.0)
+    annoyances (>= 0.0.0)
+    apt (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    hostname (>= 0.0.0)
+  packer-erlang (0.0.0)
+    erlang (>= 0.0.0)
+    packer (>= 0.0.0)
+  yum (3.2.2)
+  yum-epel (0.3.6)
+    yum (~> 3.0)
+  yum-erlang_solutions (0.2.0)
+    yum (~> 3.0)
