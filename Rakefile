@@ -6,13 +6,16 @@ task :default => [:build]
 
 desc 'Build the image'
 task :build, :template do |t, args|
-  sh <<-EOS
-    rm -rf vendor/cookbooks
-    bundle exec berks vendor vendor/cookbooks
-    export PACKER_LOG="true"
-    export PACKER_LOG_PATH="$PWD/packer.log"
-    packer build -force -only=virtualbox-iso #{args.template}.json
-  EOS
+  template = args.template
+  chdir template do
+    sh <<-EOS
+      export PACKER_LOG="true"
+      export PACKER_LOG_PATH="$PWD/packer.log"
+      rm -rf vendor/cookbooks
+      bundle exec berks vendor vendor/cookbooks && \
+        packer build -force -only=virtualbox-iso template.json
+    EOS
+  end
 end
 
 desc 'Generate a Vagrantfile'
