@@ -5,14 +5,14 @@ nuex's packer templates
 
 Currently:
 
-  * `ubuntu-14.04-amd64-base` - simple base template
+  * `ubuntu-14.04/base` - simple base template
+  * `ubuntu-14.04/erlang` - installed erlang from Erlang Solutions public repo
 
 ## Building the box
 
 Install Vagrant, vagrant-berkshelf plugin version 2.0.1 and VirtualBox.
 
-    cd ubuntu-14.04
-    rake build[ubuntu-14.04-amd64-base]
+    bundle exec rake build[ubuntu-14.04/base]
 
 # Uploading
 
@@ -35,4 +35,4 @@ Install [s3cmd](http://s3tools.org/s3cmd) and configure your s3 credentials:
 
 Upload:
 
-    bundle exec dotenv rake upload[ubuntu-14.04-amd64-base-134134141]
+    bundle exec rake upload[ubuntu-14.04/base,my.box]
