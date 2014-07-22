@@ -1,0 +1,24 @@
+DEPENDENCIES
+  packer-erlang
+    path: ../../cookbooks/packer-erlang
+
+GRAPH
+  apt (2.4.0)
+  ark (0.4.2)
+  build-essential (2.0.4)
+  erlang (1.5.4)
+    apt (>= 1.7.0)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+    yum-erlang_solutions (>= 0.0.0)
+  packer (0.3.0)
+    ark (~> 0.4.0)
+  packer-erlang (0.0.0)
+    erlang (>= 0.0.0)
+    packer (>= 0.0.0)
+  yum (3.2.2)
+  yum-epel (0.3.6)
+    yum (~> 3.0)
+  yum-erlang_solutions (0.2.0)
+    yum (~> 3.0)
