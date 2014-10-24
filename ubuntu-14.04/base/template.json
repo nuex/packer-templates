@@ -80,7 +80,7 @@
       "cookbook_paths": [
         "vendor/cookbooks"
       ],
-      "install_command": "sudo -S curl -L https://www.opscode.com/chef/install.sh | {{if .Sudo}}sudo{{end}} bash -s -- -v 11.12.2",
+      "install_command": "sudo -S curl -L https://www.opscode.com/chef/install.sh | {{if .Sudo}}sudo{{end}} bash -s -- -v 11.16.4",
       "json": {},
       "override": {
         "virtualbox-iso": {
